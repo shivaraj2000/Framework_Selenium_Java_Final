@@ -1,5 +1,6 @@
 package AbstractComponents;
 
+import com.example.Order_Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,27 +25,37 @@ public class Abstarct_Component {
     @FindBy(css="[routerlink*='cart']")
     WebElement cart;
 
+    @FindBy(css="[routerlink*='myorders']")
+    WebElement orders;
+
 
     public void visibilityOfElementsAppear(By product)
     {
-        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(product));
     }
 
     public void visibilityOfWebElementsAppear(WebElement product)
     {
-        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(product));
     }
 
-    public void visibilityOfElementsDisapper(WebElement ele)
-    {
-        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+    public void visibilityOfElementsDisapper(WebElement ele) {
+        //Thread.sleep(2000);
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.invisibilityOf(ele));
     }
 
     public void goToCart()
     {
         cart.click();
+    }
+
+    public Order_Page goToOrderPage()
+    {
+        orders.click();
+        Order_Page op=new Order_Page(driver);
+        return op;
     }
 }

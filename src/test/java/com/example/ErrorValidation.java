@@ -9,11 +9,11 @@ import java.util.List;
 
 public class ErrorValidation extends BaseTest {
 
-    @Test
+    @Test(groups = {"ErrorValidation"})
     public void LoginerrorValidations()
     {
         lp.loginToApplication("Shivaraj@gmail.com","Shivaraj@77");
-        Assert.assertEquals("Incorrect email or password.",lp.getErrorMsg());
+        Assert.assertEquals("Incorrect email  password.",lp.getErrorMsg());
     }
 
     @Test
