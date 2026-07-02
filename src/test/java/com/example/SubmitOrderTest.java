@@ -2,6 +2,7 @@ package com.example;
 
 
 import TestComponents.BaseTest;
+import TestComponents.Retry;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -18,7 +19,7 @@ public class SubmitOrderTest extends BaseTest
 {
    String productName="ZARA COAT 3";
     @Test(dataProvider = "getData", groups = "Purchase")
-    public  void submitOrder(HashMap<String,String> input) throws IOException {
+    public  void submitOrder(HashMap<String,String> input) throws IOException, InterruptedException {
        //Login
        Product_Catalog pc=lp.loginToApplication(input.get("email"),input.get("password"));
 

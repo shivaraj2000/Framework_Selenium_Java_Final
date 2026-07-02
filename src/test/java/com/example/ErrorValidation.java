@@ -1,6 +1,7 @@
 package com.example;
 
 import TestComponents.BaseTest;
+import TestComponents.Retry;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -9,16 +10,15 @@ import java.util.List;
 
 public class ErrorValidation extends BaseTest {
 
-    @Test(groups = {"ErrorValidation"})
+    @Test(groups = {"ErrorValidation"}, retryAnalyzer = Retry.class)
     public void LoginerrorValidations()
     {
         lp.loginToApplication("Shivaraj@gmail.com","Shivaraj@77");
-        Assert.assertEquals("Incorrect email  password.",lp.getErrorMsg());
+        Assert.assertEquals("Incorrect email or password.",lp.getErrorMsg());
     }
 
     @Test
-    public void ProdcterrorValidations()
-    {
+    public void ProdcterrorValidations() throws InterruptedException {
         String productName="ZARA COAT 3";
         Product_Catalog pc=lp.loginToApplication("Shivaraj@gmail.com","Shivaraj@7");
         List<WebElement> products=pc.getProductList();

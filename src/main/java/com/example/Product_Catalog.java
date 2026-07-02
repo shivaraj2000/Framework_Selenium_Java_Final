@@ -49,9 +49,10 @@ public class Product_Catalog extends Abstarct_Component
         return prod;
     }
 
-    public void addToCart(String productName) {
+    public void addToCart(String productName) throws InterruptedException {
         getProductName(productName).findElement(By.cssSelector(".card button:last-of-type")).click();
         visibilityOfElementsAppear(toastMsg);
         visibilityOfElementsDisapper(spinner);
+
     }
 }
