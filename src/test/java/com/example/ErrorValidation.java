@@ -17,6 +17,7 @@ public class ErrorValidation extends BaseTest {
         Assert.assertEquals("Incorrect email or password.",lp.getErrorMsg());
     }
 
+
     @Test
     public void ProdcterrorValidations() throws InterruptedException {
         String productName="ZARA COAT 3";
