@@ -28,6 +28,7 @@ public class ErrorValidation extends BaseTest {
         Cart_Page cp=new Cart_Page(driver);
         boolean bool=cp.verifyProductDisplay("ZARA COAT 33");
         Assert.assertFalse(bool);
-        //System.out.println("Testing the pull request from git");
+        //System.out.println("Testing the pull request from git pull from inteelij");
+         //System.out.println("Testing the pull request from git pull from cmd");
     }
 }
