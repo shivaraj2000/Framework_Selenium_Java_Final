@@ -35,5 +35,7 @@ public class ErrorValidation extends BaseTest {
         //System.out.println("Testing the pull request from the newley created develop branch");
         //
          //
+
+        //System.out.println("Running with Git and Jenkins when the code is deploed to git automatically");
     }
 }
